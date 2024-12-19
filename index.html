@@ -3,9 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Money control </title>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+        }
+        .top-bar .menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+        }
+        .top-bar .menu span {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .top-bar select {
+            padding: 5px;
+            border: none;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        #lang-sec{
+          padding: 5px;
+            border: 1px solid #0a6cb1;
+            background-color:rgb(255, 255, 255);
+            border-radius: 4px;
+        }
+        .top-bar input[type="search"] {
+            width: 550px;
+            padding: 8px;
+            margin: 0 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 50px;
+            font-size: 14px;
+            
+        }
+        #search-btn{
+          position: absolute;
+      right: 396px; /* Adjust based on padding */
+      top: 8.5px;
+      transform: translateY();
+      background: #0065A1;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 16px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+        .logo img {
+            height: 30px;
+        }
+        .top-bar button {
+            background-color: transparent;
+            border: none;
+            
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #alert-btn{
+          background-color: #D6DBE3;
+    width: 85px;
+    height: 25px;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: x-small;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #666666;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    top: 5px;
+    margin-right: 7px;
+    
+        }
+        #alert-btn i {
+          margin-right: 8px; 
+         }
+         #ad-free-btn{
+          background-color: #F8F0EB;
+          color: #F08414;
+          font-weight: bold;
+          padding: 3px;
+         }
+         #login-btn{
+          background-color: transparent;
+          color: #535866;
+         }
+        
+        .top-bar button:hover {
+            text-decoration: underline;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 14px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 8px;
+        }
+        .nav-links a.highlight {
+            color: #f08c00;
+            font-weight: bold;
+        }
+        
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="top-bar">
+            <div class="menu">
+                <span>&#9776;</span>
+                <select >
+                    <option>English</option>
+                    <option>Hindi</option>
+                </select>
+                <select id="lang-sec">
+                  <option>Specials</option>
+                  
+              </select>
+            </div>
+            <input type="search" placeholder="Search Quotes, News, Mutual Fund NAVs">
+            <button id="search-btn">S</button>
+            <div class="top-btn">
+                <button id="alert-btn">
+                  <i class="fa-regular fa-bell"></i>
+                  My Alerts</button>
+                <button id="ad-free-btn">Go Ad-Free</button>
+                <button id="login-btn">
+                  <i class="fa-regular fa-user"></i>
+                  Hello, Login</button>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Markets</a>
+            <a href="#">News</a>
+            <a href="#">Assembly Elections</a>
+            <a href="#">Tech</a>
+            <a href="#">India</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Watchlist</a>
+            <a href="#">Commodities</a>
+            <a href="#">Mutual Funds</a>
+            <a href="#">Personal Finance</a>
+            <a href="#">Forum</a>
+            <a href="#">Videos</a>
+            <a href="#">Invest Now</a>
+            <a class="highlight" href="#">PRO</a>
+        </nav>
+    </header>
 </body>
 </html>
+<div class="logo">
+  <img src="logo.png" alt="Moneycontrol Logo">
+  <span style="color: #f08c00;">Go PRO @₹99</span>
+</div>

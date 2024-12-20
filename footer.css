@@ -1,0 +1,84 @@
+footer{
+    width: 100%;
+    
+    background-color:#e8e8e8 ;
+   
+    position:static ;
+    bottom: 0px;
+}
+.social-links{
+    display: flex;
+    color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width:100% ;
+    background-color: black;
+}
+.social-links img{
+    width: 170px;
+    padding-left: 10px;
+   
+}
+.social-icons {
+   
+    gap: 10px;
+  }
+  .icon i{
+    color: azure;
+    padding-right: 8px;
+  }
+  .a-z-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .a-z-links ul{
+    width: 1000px;
+    margin-right: 10%;
+    list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+  }
+  .a-z-links li{
+    padding: 2px 4px;
+    color: rgb(136, 136, 136);
+    border-radius: 50%;
+    background-color: rgb(212, 212, 212);
+    cursor: pointer;
+  }
+  .footer-sub{
+    text-align: right;
+     display: flex;
+     padding: 0%;
+     margin: 0%;
+  }
+  footer h2{
+    margin: 0px;
+    margin-left: 10px;
+    padding: 0%;
+  }
+  .footer-sub p{
+    margin-left: 15px;
+  }
+  .app-downlaod{
+    display: flex;
+    align-items: center;
+
+  }
+  .playstore{
+    width: 250px;
+    height: 70px;
+
+  }
+  .appstore{
+
+        width: 250px;
+        height: 130px;
+    
+    
+  }
+  .app-downlaod{
+    height: 80px;
+    background-color: rgb(197, 197, 197);
+  }

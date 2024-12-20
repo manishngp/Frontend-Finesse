@@ -1,0 +1,27 @@
+.navbar-botton-links {
+    display: flex;
+  justify-content: space-evenly;
+    padding: 5px;
+    background-color: #f9f9f9;
+    
+}
+.navbar-botton-links a {
+    width: max-content;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+.navbar-botton-links a:hover {
+    text-decoration: underline;
+}
+.navbar-botton-links .highlight {
+    color: rgb(255, 89, 0);
+    font-weight: bold;
+}
+.navbar-botton-links .tag {
+    color: #555;
+}
+.navbar-botton-links .free {
+    color: rgb(0, 162, 0);
+    font-weight: bold;
+}

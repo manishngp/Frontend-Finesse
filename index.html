@@ -7,20 +7,23 @@
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     rel="stylesheet">
+    <link rel="stylesheet" href="sidebarstyle.css">
+    <link rel="stylesheet" href="navbar-botton-links.css">
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        header {
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
-        }
+        /* header {
+         
+        } */
         .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 5px 20px;
+            background-color: #f8f9fa;
+            
         }
         .top-bar .menu {
             display: flex;
@@ -55,7 +58,7 @@
         }
         #search-btn{
           position: absolute;
-      right: 396px; /* Adjust based on padding */
+      right: 422px;
       top: 8.5px;
       transform: translateY();
       background: #0065A1;
@@ -67,16 +70,25 @@
       font-size: 16px;
         }
         .logo {
-            display: flex;
+            
+            display: grid;
             align-items: center;
-            gap: 5px;
+            justify-content: center;
+            height: 80px;
             font-size: 14px;
         }
         .logo img {
-            height: 30px;
+            
+            height: 40px;
+        }
+        .logo span{
+           position: relative;
+           left: 100px;
+           font-weight: bold;
+           text-decoration: underline;
         }
         .top-bar button {
-            background-color: transparent;
+            /* background-color: transparent; */
             border: none;
             
             font-size: 14px;
@@ -84,29 +96,31 @@
         }
         #alert-btn{
           background-color: #D6DBE3;
-    width: 85px;
-    height: 25px;
-    border-radius: 3px;
-    display: inline-block;
-    font-size: x-small;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: #666666;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    top: 5px;
-    margin-right: 7px;
+         width: 85px;
+           height: 25px;
+            border-radius: 3px;
+            display: inline-block;
+            font-size: x-small;
+            font-family: sans-serif;
+           font-weight: bold;
+           color: #666666;
+            text-align: center;
+               text-decoration: none;
+            position: relative;
+          top: 5px;
+          margin-right: 7px;
     
         }
         #alert-btn i {
           margin-right: 8px; 
          }
-         #ad-free-btn{
-          background-color: #F8F0EB;
-          color: #F08414;
+        .ad-free-btn{
+          background-color: #ffeadc;
+          color: #e39139;
           font-weight: bold;
+          border-radius: 4px;
           padding: 3px;
+          border: none;
          }
          #login-btn{
           background-color: transparent;
@@ -116,32 +130,171 @@
         .top-bar button:hover {
             text-decoration: underline;
         }
-        .nav-links {
+         .nav-links {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px 20px;
+             justify-content: space-between; 
+             align-items: center;
+            padding: 10px 20px;
             background-color: #fff;
             border-bottom: 1px solid #dee2e6;
+            border-top: 1px solid #dee2e6;
             font-size: 14px;
-        }
-        .nav-links a {
+        } 
+        /* .nav-links a {
             text-decoration: none;
-            color: #007bff;
+            font-weight: bold;
+            color: #000000;
             margin: 0 8px;
-        }
-        .nav-links a.highlight {
+        } */
+        /* .nav-links a.highlight {
             color: #f08c00;
             font-weight: bold;
-        }
+        } */
+       .market-dropdown , .news-dropdown, .mf-dropdown, .pf-dropdown, .forum-dropdown{
+      visibility:hidden;
+      opacity: 0; 
+      position: absolute;
+      top: 30%;
+      left: 0;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      z-index: 1000;
+      padding: 20px;
+      width: 90%;
+      display: flex;
+      gap: 50px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .market:hover .market-dropdown{
+        visibility: visible; 
+        opacity: 1;
+    }
+    .news:hover .news-dropdown{
+        visibility: visible; 
+        opacity: 1;
+    }
+    .mf:hover .mf-dropdown{
+        visibility: visible; 
+        opacity: 1;
+    }
+    .pf:hover .pf-dropdown{
+        visibility: visible; 
+        opacity: 1;
+    }
+    .forum:hover .forum-dropdown{
+        visibility: visible; 
+        opacity: 1;
+    }
+    .dropdown-column {
+      flex: 1;
+    }
+
+    .dropdown-column h3 {
+      font-size: 16px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: max-content;
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .dropdown-column ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .dropdown-column ul li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .dropdown-column ul li a:hover {
+      color: #1e90ff;
+    }
+   a{
+    width: 300px;
+   }
+    
+ 
+    
+     h4{
+        margin: 0%;
+     }
+    
+
+   nav div:first-child{
+    color: #0065A1;
+   }
+   #menuButton{
+    text-decoration: none;
+    background-color:transparent;
+    cursor: pointer;
+   }
+   
+  
         
     </style>
 </head>
 <body>
     <header>
+      <div id="sidebar" class="sidebar">
+        <button id="closeButton" class="close-btn">×</button>
+        <div class="logoside">
+          <img src="logo.png" alt="Moneycontrol Logo">
+        </div >
+        <div id="sidebarwindow">
+          <div>
+        <ul>
+          <li>HOME</li>
+          <li>MARKETS</li>
+          <li>NEWS</li>
+          <li class="lks15">INSTANT ₹15 LAKHS</li>
+          <li>PORTFOLIO</li>
+          <li>WATCHLIST</li>
+          <li>MUTUAL FUNDS</li>
+          <li>PERSONAL FINANCE</li>
+          <li>FORUM</li>
+          <li>VIDEOS</li>
+          <li>INVEST NOW</li>
+          <li>INTERNATIONAL</li>
+        </ul>
+        </div>
+        <div>
+        <ul id="sidemenu">
+
+          <li>Budget 2025</li>
+          <li style="font-weight: bold;">Web Stories</li>
+          <li>MF Simplified</li>
+          <li style="color: rgb(161, 0, 161); font-weight: bold">Loans up to</li>
+          <li>Real Estate</li>
+          <li style="color: rgb(0, 140, 16); font-weight: bold">Credit Cards</li>
+          <li>Credit Score</li>
+          <li>FDs</li>
+          <li>IPO</li>
+          <li style="font-weight: bold;">Stock Advisory</li>
+          <li>#Research Picks</li>
+          <li>#share.market</li>
+          <li>#Fintech</li>
+          <li>#IFBA2023</li>
+         
+
+          
+        </ul>
+        </div>
+      </div>
+      </div>
+      
         <div class="top-bar">
             <div class="menu">
-                <span>&#9776;</span>
+              <span>
+                <button id="menuButton">☰ </button>
+              </span>
                 <select >
                     <option>English</option>
                     <option>Hindi</option>
@@ -157,32 +310,359 @@
                 <button id="alert-btn">
                   <i class="fa-regular fa-bell"></i>
                   My Alerts</button>
-                <button id="ad-free-btn">Go Ad-Free</button>
+                <button class="ad-free-btn">Go Ad-Free</button>
                 <button id="login-btn">
                   <i class="fa-regular fa-user"></i>
                   Hello, Login</button>
             </div>
         </div>
+        <div class="logo">
+            <img src="logo.png" alt="Moneycontrol Logo">
+            <span style="color: #f08c00;">Go PRO @₹99</span>
+        </div>
         <nav class="nav-links">
-            <a href="#">Markets</a>
-            <a href="#">News</a>
-            <a href="#">Assembly Elections</a>
-            <a href="#">Tech</a>
-            <a href="#">India</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Watchlist</a>
-            <a href="#">Commodities</a>
-            <a href="#">Mutual Funds</a>
-            <a href="#">Personal Finance</a>
-            <a href="#">Forum</a>
-            <a href="#">Videos</a>
-            <a href="#">Invest Now</a>
-            <a class="highlight" href="#">PRO</a>
+            <div>
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+         
+            <div class="market" >
+                <h4 >Markets <i class="fa-solid fa-chevron-down"></i></h4>
+                <div class="market-dropdown">
+                    <div class="dropdown-column">
+                      <h3>Home</h3>
+                      <h3>Indian Indices</h3>
+                      <h3>Stock Action</h3>
+                      <ul>
+                        <li><a href="#">All Stats</a></li>
+                        <li><a href="#">Top Gainers</a></li>
+                        <li><a href="#">Top Losers</a></li>
+                        <li><a href="#">52 Week High</a></li>
+                        <li><a href="#">52 Week Low</a></li>
+                        <li><a href="#">Price Shockers</a></li>
+                        <li><a href="#">Volume Shockers</a></li>
+                        <li><a href="#">Most Active Stocks</a></li>
+                      </ul>
+                    </div>
+                    <div class="dropdown-column">
+                      <h3>Global Markets</h3>
+                      <h3>US MARKETS</h3>
+                      <h3>SEASONALITY ANALYSIS</h3>
+                      <h3>STOCK SCANNER</h3>
+                      <h3>ECONOMIC INDICATORS</h3>
+                      <h3>ECONOMIC CALENDAR</h3>
+                      <h3>MARKET ACTION</h3>
+                      <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">F&O</a></li>
+                        <li><a href="#">FII & DII Activity</a></li>
+                        <li><a href="#">Corporate Action </a></li>
+                      </ul>
+                    </div>
+                    <div class="dropdown-column">
+                      <h3>Earnings</h3>
+                      <ul>
+                        <li><a href="#">Stock Deals</a></li>
+                        <li><a href="#">Sector Analysis</a></li>
+                        <li><a href="#">Pre Market</a></li>
+                      </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>Technical Trends</h3>
+                        <ul>
+                          <li><a href="#">Stock Deals</a></li>
+                          <li><a href="#">Sector Analysis</a></li>
+                          <li><a href="#">Pre Market</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+
+            <div class="news">
+                <h4>News <i class="fa-solid fa-chevron-down"></i></h4>
+                <div class="news-dropdown">
+                  <div class="dropdown-column">
+                    <h3>LATEST NEWS</h3>
+                    <ul>
+                      <li>Assembly Elections</li>
+                    </ul>
+                    
+                    <h3>BUSINESS</h3>
+                    <ul>
+                      <li><a href="#">Economy</a></li>
+                      <li><a href="#">Companies</a></li>
+                      <li><a href="#">Mutual Funds</a></li>
+                      <li><a href="#">Personal Finance</a></li>
+                      <li><a href="#">IPO</a></li>
+                      <li><a href="#">Startup</a></li>
+                      <li><a href="#">Real Estate</a></li>
+                      <li><a href="#">Banking </a></li>
+                      <li><a href="#"><h3>NATION & WORLD</h3> </a></li>
+                      <li><a href="#">India</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h3>Global Markets</h3>
+                    <h3>US MARKETS</h3>
+                    <h3>SEASONALITY ANALYSIS</h3>
+                    <h3>STOCK SCANNER</h3>
+                    <h3>ECONOMIC INDICATORS</h3>
+                    <h3>ECONOMIC CALENDAR</h3>
+                    <h3>MARKET ACTION</h3>
+                    <ul>
+                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">F&O</a></li>
+                      <li><a href="#">FII & DII Activity</a></li>
+                      <li><a href="#">Corporate Action </a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h3>Earnings</h3>
+                    <ul>
+                      <li><a href="#">Stock Deals</a></li>
+                      <li><a href="#">Sector Analysis</a></li>
+                      <li><a href="#">Pre Market</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                      <h3>Technical Trends</h3>
+                      <ul>
+                        <li><a href="#">Stock Deals</a></li>
+                        <li><a href="#">Sector Analysis</a></li>
+                        <li><a href="#">Pre Market</a></li>
+                      </ul>
+                    </div>
+              </div>
+            </div>
+
+            <div>
+                <h4>Assembly Elections</h4>
+            </div>
+
+            <div>
+                <h4>Tech</h4>
+            </div>
+
+            <div>
+                <h4>India</h4>
+            </div>
+
+            <div>
+                <h4>Portfolio</h4>
+            </div>
+
+            <div>
+                <h4>Watchlist</h4>
+            </div>
+
+            <div>
+                <h4>Commodities</h4>
+            </div>
+
+            <div class="mf">
+                <h4>Mutul Funds <i class="fa-solid fa-chevron-down"></i></h4>
+                <div class="mf-dropdown">
+                  <div class="dropdown-column">
+                    <h3>LATEST NEWS</h3>
+                    <ul>
+                      <li>Assembly Elections</li>
+                    </ul>
+                    
+                    <h3>BUSINESS</h3>
+                    <ul>
+                      <li><a href="#">Economy</a></li>
+                      <li><a href="#">Companies</a></li>
+                      <li><a href="#">Mutual Funds</a></li>
+                      <li><a href="#">Personal Finance</a></li>
+                      <li><a href="#">IPO</a></li>
+                      <li><a href="#">Startup</a></li>
+                      <li><a href="#">Real Estate</a></li>
+                      <li><a href="#">Banking </a></li>
+                      <li><a href="#"><h3>NATION & WORLD</h3> </a></li>
+                      <li><a href="#">India</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h3>Global Markets</h3>
+                    <h3>US MARKETS</h3>
+                    <h3>SEASONALITY ANALYSIS</h3>
+                    <h3>STOCK SCANNER</h3>
+                    <h3>ECONOMIC INDICATORS</h3>
+                    <h3>ECONOMIC CALENDAR</h3>
+                    <h3>MARKET ACTION</h3>
+                    <ul>
+                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">F&O</a></li>
+                      <li><a href="#">FII & DII Activity</a></li>
+                      <li><a href="#">Corporate Action </a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h3>Earnings</h3>
+                    <ul>
+                      <li><a href="#">Stock Deals</a></li>
+                      <li><a href="#">Sector Analysis</a></li>
+                      <li><a href="#">Pre Market</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                      <h3>Technical Trends</h3>
+                      <ul>
+                        <li><a href="#">Stock Deals</a></li>
+                        <li><a href="#">Sector Analysis</a></li>
+                        <li><a href="#">Pre Market</a></li>
+                      </ul>
+                    </div>
+              </div>
+            </div>
+
+            <div class="pf">
+              <h4>Personal Finance <i class="fa-solid fa-chevron-down"></i></h4>
+              <div class="pf-dropdown">
+                <div class="dropdown-column">
+                  <h3>LATEST NEWS</h3>
+                  <ul>
+                    <li>Assembly Elections</li>
+                  </ul>
+                  
+                  <h3>BUSINESS</h3>
+                  <ul>
+                    <li><a href="#">Economy</a></li>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Mutual Funds</a></li>
+                    <li><a href="#">Personal Finance</a></li>
+                    <li><a href="#">IPO</a></li>
+                    <li><a href="#">Startup</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">Banking </a></li>
+                    <li><a href="#"><h3>NATION & WORLD</h3> </a></li>
+                    <li><a href="#">India</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                  <h3>Global Markets</h3>
+                  <h3>US MARKETS</h3>
+                  <h3>SEASONALITY ANALYSIS</h3>
+                  <h3>STOCK SCANNER</h3>
+                  <h3>ECONOMIC INDICATORS</h3>
+                  <h3>ECONOMIC CALENDAR</h3>
+                  <h3>MARKET ACTION</h3>
+                  <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">F&O</a></li>
+                    <li><a href="#">FII & DII Activity</a></li>
+                    <li><a href="#">Corporate Action </a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                  <h3>Earnings</h3>
+                  <ul>
+                    <li><a href="#">Stock Deals</a></li>
+                    <li><a href="#">Sector Analysis</a></li>
+                    <li><a href="#">Pre Market</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                    <h3>Technical Trends</h3>
+                    <ul>
+                      <li><a href="#">Stock Deals</a></li>
+                      <li><a href="#">Sector Analysis</a></li>
+                      <li><a href="#">Pre Market</a></li>
+                    </ul>
+                  </div>
+            </div>
+          </div>
+
+
+            <div class="forum">
+                <h4>Forum <i class="fa-solid fa-chevron-down"></i></h4>
+                <div class="forum-dropdown">
+                  <div class="dropdown-column">
+                    <h3>LATEST NEWS</h3>
+                    <ul>
+                      <li>Assembly Elections</li>
+                    </ul>
+                    
+                    <h3>BUSINESS</h3>
+                    <ul>
+                      <li><a href="#">Economy</a></li>
+                      <li><a href="#">Companies</a></li>
+                      <li><a href="#">Mutual Funds</a></li>
+                      <li><a href="#">Personal Finance</a></li>
+                      <li><a href="#">IPO</a></li>
+                      <li><a href="#">Startup</a></li>
+                      <li><a href="#">Real Estate</a></li>
+                      <li><a href="#">Banking </a></li>
+                      <li><a href="#"><h3>NATION & WORLD</h3> </a></li>
+                      <li><a href="#">India</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h3>Global Markets</h3>
+                    <h3>US MARKETS</h3>
+                    <h3>SEASONALITY ANALYSIS</h3>
+                    <h3>STOCK SCANNER</h3>
+                    <h3>ECONOMIC INDICATORS</h3>
+                    <h3>ECONOMIC CALENDAR</h3>
+                    <h3>MARKET ACTION</h3>
+                    <ul>
+                      <li><a href="#">Dashboard</a></li>
+                      <li><a href="#">F&O</a></li>
+                      <li><a href="#">FII & DII Activity</a></li>
+                      <li><a href="#">Corporate Action </a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h3>Earnings</h3>
+                    <ul>
+                      <li><a href="#">Stock Deals</a></li>
+                      <li><a href="#">Sector Analysis</a></li>
+                      <li><a href="#">Pre Market</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                      <h3>Technical Trends</h3>
+                      <ul>
+                        <li><a href="#">Stock Deals</a></li>
+                        <li><a href="#">Sector Analysis</a></li>
+                        <li><a href="#">Pre Market</a></li>
+                      </ul>
+                    </div>
+            </div>
+          </div>
+
+            <div>
+                <h4>Videos</h4>
+            </div>
+
+            <div>
+                <h4>Invest Now</i></h4>
+            </div>           
+
+            <button class="ad-free-btn">PRO</button>
+
+
+
         </nav>
+        <div class="navbar-botton-links">
+          <a href="#">Budget 2025</a>
+          <a href="#">Web Stories</a>
+          <a href="#">MF Simplified</a>
+          <a href="#">Real Estate</a>
+          <a href="#" class="free">Credit card</a>
+          <a href="#">Credit Score</a>
+          <a href="#">FDs</a>
+          <a href="#">IPO</a>
+          <a href="#">Sby SEBI's RIA</a>
+          <a href="#" class="highlight">#Research Picks</a>
+          <a href="#" class="tag">#share.market</a>
+          <a href="#" class="tag">#Fintech</a>
+          <a href="#" class="tag">#IFBA2023</a>
+      </div>
     </header>
 </body>
 </html>
-<div class="logo">
-  <img src="logo.png" alt="Moneycontrol Logo">
-  <span style="color: #f08c00;">Go PRO @₹99</span>
-</div>
+
+
+
+<script src="sidebar.js"></script>
